@@ -1,14 +1,14 @@
 
 Halo Media - Assignment : How to Execute Automation Script
 
-Prerequisites
+Prerequisites : 
 
 - Python 3.10 or above  
 - pip (Python package installer)  
 
 ---
 
-Set Up Robot Framework
+Set Up Robot Framework : 
 
 1. Install Python: Ensure Python is installed (version 3.6 or later). You can download it from python.org.  
 2. Install PyCharm: Install PyCharm for easy development and script execution. Download PyCharm.  
@@ -19,7 +19,7 @@ Set Up Robot Framework
 
 ---
 
-Steps to Clone and Set Up the Repository
+Steps to Clone and Set Up the Repository : 
 
 1. Clone the repository:  
    git clone https://github.com/amol-kalhapure-indexnine/halo_assignment.git 
@@ -28,7 +28,7 @@ Steps to Clone and Set Up the Repository
 
 ---
 
-Running Tests
+Running Tests : 
 
 Sequential Execution Using Robot  
 
