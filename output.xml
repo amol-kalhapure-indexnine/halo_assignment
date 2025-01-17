@@ -1,0 +1,791 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2 (Python 3.12.2 on win32)" generated="2025-01-17T17:46:44.306007" rpa="false" schemaversion="5">
+<suite id="s1" name="Hotel Testcases" source="C:\Users\Amol\Desktop\Halo_Assignment\TestCases\hotel_testcases.robot">
+<test id="s1-t1" name="TCH_01 Verify traveler can refine search results by inputting values in Min Price and Max Price text boxes" line="16">
+<kw name="Open Tripjack Application" owner="login_keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-01-17T17:46:45.870209" level="INFO">Opening browser 'chrome' to base url 'https://stagingcorporate.tripjack.com/'.</msg>
+<arg>${staging_url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-01-17T17:46:45.870209" elapsed="3.324217"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-01-17T17:46:49.195210" elapsed="0.029783"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>${window_height}</arg>
+<arg>${window_width}</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2025-01-17T17:46:49.224993" elapsed="0.390695"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${email_field}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-01-17T17:46:49.615688" elapsed="0.232254"/>
+</kw>
+<status status="PASS" start="2025-01-17T17:46:45.870209" elapsed="3.977733"/>
+</kw>
+<kw name="Fetch Testdata By Id" owner="process_testdata_keyword">
+<msg time="2025-01-17T17:46:49.863879" level="INFO">${search_data} = {'TC_ID': 'TCH_01', 'Username': 'elon.musk5@mailinator.com', 'Otp': 123456, 'HotelCity': 'Navi mumbai', 'NoOfRoom': 5, 'NoOfAdults': 5, 'NumberOfMonthsAhead': None, 'DepartureDate': None, 'NumberOfMon...</msg>
+<var>${search_data}</var>
+<arg>${SEARCH_FLIGHTS_TD}</arg>
+<arg>Sheet1</arg>
+<arg>TCH_01</arg>
+<status status="PASS" start="2025-01-17T17:46:49.847942" elapsed="0.015937"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-01-17T17:46:49.863879" level="INFO">{'TC_ID': 'TCH_01', 'Username': 'elon.musk5@mailinator.com', 'Otp': 123456, 'HotelCity': 'Navi mumbai', 'NoOfRoom': 5, 'NoOfAdults': 5, 'NumberOfMonthsAhead': None, 'DepartureDate': None, 'NumberOfMonthsAheadForReturn': None, 'ReturnDate': None}</msg>
+<arg>${search_data}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-01-17T17:46:49.863879" elapsed="0.000000"/>
+</kw>
+<kw name="Login With Valid Corporate Traveller Username And OTP" owner="login_keywords">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-01-17T17:46:49.863879" level="INFO">${my_dict} = {'TC_ID': 'TCH_01', 'Username': 'elon.musk5@mailinator.com', 'Otp': 123456, 'HotelCity': 'Navi mumbai', 'NoOfRoom': 5, 'NoOfAdults': 5, 'NumberOfMonthsAhead': None, 'DepartureDate': None, 'NumberOfMon...</msg>
+<var>${my_dict}</var>
+<arg>&amp;{search_data}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-01-17T17:46:49.863879" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-17T17:46:49.863879" level="INFO">Typing text 'elon.musk5@mailinator.com' into text field '//input[@placeholder='Enter your email ID here']'.</msg>
+<arg>${email_field}</arg>
+<arg>${my_dict.Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T17:46:49.863879" elapsed="0.169996"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-17T17:46:50.033875" level="INFO">Clicking element '//span[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth css-1fi99zc']'.</msg>
+<arg>${login_next_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T17:46:50.033875" elapsed="0.430286"/>
+</kw>
+<kw name="Input Static Otp In The Otp Field" owner="login_keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-17T17:46:50.464161" level="INFO">Typing text '123456' into text field '//input[@aria-label='Please enter OTP character 1']'.</msg>
+<arg>${otp_field}</arg>
+<arg>${search_data['Otp']}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T17:46:50.464161" elapsed="0.374293"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-17T17:46:50.838454" level="INFO">Clicking element '//span[contains(normalize-space(),'Verify')]'.</msg>
+<arg>${verify_otp_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T17:46:50.838454" elapsed="0.072328"/>
+</kw>
+<arg>${search_data}</arg>
+<status status="PASS" start="2025-01-17T17:46:50.464161" elapsed="0.446621"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${corporate_traveller_home_navigation_text}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-17T17:46:50.910782" elapsed="1.198265"/>
+</kw>
+<arg>${search_data}</arg>
+<status status="PASS" start="2025-01-17T17:46:49.863879" elapsed="2.245168"/>
+</kw>
+<kw name="Click On Hotels Tab Button" owner="hotel_search_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${hotels_option}</arg>
+<arg>timeout=30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-17T17:46:52.109047" elapsed="0.017980"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-17T17:46:52.127027" level="INFO">Clicking element '//button[contains(@class,"MuiButtonBase-root")]//div[normalize-space()="Hotels"]'.</msg>
+<arg>${hotels_option}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T17:46:52.127027" elapsed="0.155888"/>
+</kw>
+<status status="PASS" start="2025-01-17T17:46:52.109047" elapsed="0.173868"/>
+</kw>
+<kw name="Search The Destination Of Hotels" owner="hotel_search_keywords">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-01-17T17:46:52.283937" level="INFO">${my_dict} = {'TC_ID': 'TCH_01', 'Username': 'elon.musk5@mailinator.com', 'Otp': 123456, 'HotelCity': 'Navi mumbai', 'NoOfRoom': 5, 'NoOfAdults': 5, 'NumberOfMonthsAhead': None, 'DepartureDate': None, 'NumberOfMon...</msg>
+<var>${my_dict}</var>
+<arg>&amp;{search_data}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-01-17T17:46:52.283937" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${to_enter_destination_hotels_inputbox}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-17T17:46:52.283937" elapsed="0.150143"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-01-17T17:46:52.434080" level="INFO">${input_city} = //div[normalize-space()="Navi mumbai"]</msg>
+<var>${input_city}</var>
+<arg>${search_destination}</arg>
+<arg>city</arg>
+<arg>${my_dict.HotelCity}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-01-17T17:46:52.434080" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-17T17:46:52.434080" level="INFO">Typing text 'Navi mumbai' into text field '//input[@placeholder="Enter Destination"]'.</msg>
+<arg>${to_enter_destination_hotels_inputbox}</arg>
+<arg>${my_dict.HotelCity}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T17:46:52.434080" elapsed="0.152484"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${input_city}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-17T17:46:52.586564" elapsed="0.241551"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-17T17:46:52.829114" level="INFO">Clicking element '//div[normalize-space()="Navi mumbai"]'.</msg>
+<arg>${input_city}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T17:46:52.829114" elapsed="0.068230"/>
+</kw>
+<arg>${search_data}</arg>
+<status status="PASS" start="2025-01-17T17:46:52.283937" elapsed="0.613407"/>
+</kw>
+<kw name="Click On Hotels Search Button" owner="hotel_search_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${hotels_search_button}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-17T17:46:52.897344" elapsed="0.013242"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-17T17:46:52.910586" level="INFO">Clicking element '//div[contains(@class,"icon-search MuiBox-root")]'.</msg>
+<arg>${hotels_search_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T17:46:52.910586" elapsed="0.086424"/>
+</kw>
+<arg>10</arg>
+<arg>20</arg>
+<arg>Click Element</arg>
+<arg>${hotels_search_button}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-01-17T17:46:52.910586" elapsed="0.087430"/>
+</kw>
+<status status="PASS" start="2025-01-17T17:46:52.897344" elapsed="0.100672"/>
+</kw>
+<kw name="Inputting Values In Min Price And Max Price Text Boxes" owner="hotel_search_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${hotel_result_min_price_inputbox}</arg>
+<arg>timeout=90</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-17T17:46:52.998664" elapsed="10.148810"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-17T17:47:03.147474" level="INFO">Clicking element '//input[@name='min']'.</msg>
+<arg>${hotel_result_min_price_inputbox}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T17:47:03.147474" elapsed="0.090332"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-01-17T17:47:03.237806" level="INFO">Sending key(s) ('BACKSPACE+BACKSPACE',) to //input[@name='min'] element.</msg>
+<msg time="2025-01-17T17:47:03.551472" level="INFO">Pressing special key BACKSPACE down.</msg>
+<msg time="2025-01-17T17:47:03.551472" level="INFO">Pressing special key BACKSPACE down.</msg>
+<msg time="2025-01-17T17:47:03.551472" level="INFO">Releasing special key BACKSPACE.</msg>
+<msg time="2025-01-17T17:47:03.551472" level="INFO">Releasing special key BACKSPACE.</msg>
+<arg>${hotel_result_min_price_inputbox}</arg>
+<arg>BACKSPACE+BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-01-17T17:47:03.237806" elapsed="0.434440"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-17T17:47:03.673252" level="INFO">Clicking element '//input[@name='min']'.</msg>
+<arg>${hotel_result_min_price_inputbox}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T17:47:03.672246" elapsed="0.059895"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-17T17:47:03.732141" level="INFO">Typing text '5' into text field '//input[@name='min']'.</msg>
+<arg>${hotel_result_min_price_inputbox}</arg>
+<arg>5</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T17:47:03.732141" elapsed="0.230977"/>
+</kw>
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2025-01-17T17:47:04.020708" level="INFO">${minvalue} = 13685</msg>
+<var>${minvalue}</var>
+<arg>${hotel_result_min_price_inputbox}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T17:47:03.963118" elapsed="0.057590"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${hotel_result_max_price_inputbox}</arg>
+<arg>timeout=30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-17T17:47:04.020708" elapsed="0.030052"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-17T17:47:04.050760" level="INFO">Clicking element '//input[@name='max']'.</msg>
+<arg>${hotel_result_max_price_inputbox}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T17:47:04.050760" elapsed="0.146410"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-01-17T17:47:04.197170" level="INFO">Sending key(s) ('BACKSPACE+BACKSPACE',) to //input[@name='max'] element.</msg>
+<msg time="2025-01-17T17:47:04.495259" level="INFO">Pressing special key BACKSPACE down.</msg>
+<msg time="2025-01-17T17:47:04.495259" level="INFO">Pressing special key BACKSPACE down.</msg>
+<msg time="2025-01-17T17:47:04.495259" level="INFO">Releasing special key BACKSPACE.</msg>
+<msg time="2025-01-17T17:47:04.495259" level="INFO">Releasing special key BACKSPACE.</msg>
+<arg>${hotel_result_max_price_inputbox}</arg>
+<arg>BACKSPACE+BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-01-17T17:47:04.197170" elapsed="0.401356"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-17T17:47:04.599527" level="INFO">Clicking element '//input[@name='max']'.</msg>
+<arg>${hotel_result_max_price_inputbox}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T17:47:04.598526" elapsed="0.067888"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-17T17:47:04.666414" level="INFO">Typing text '505' into text field '//input[@name='max']'.</msg>
+<arg>${hotel_result_max_price_inputbox}</arg>
+<arg>505</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T17:47:04.666414" elapsed="0.287260"/>
+</kw>
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2025-01-17T17:47:04.988208" level="INFO">${maxvalue} = 34326</msg>
+<var>${maxvalue}</var>
+<arg>${hotel_result_max_price_inputbox}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T17:47:04.953674" elapsed="0.034534"/>
+</kw>
+<status status="PASS" start="2025-01-17T17:46:52.998479" elapsed="11.989729"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-01-17T17:47:04.988208" elapsed="2.236119"/>
+</kw>
+<tag>TCH_01</tag>
+<status status="PASS" start="2025-01-17T17:46:45.870209" elapsed="21.354118"/>
+</test>
+<test id="s1-t2" name="TCH_02 Verify total nights automatically recalculated based on updated check-in and check-out dates" line="26">
+<kw name="Open Tripjack Application" owner="login_keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-01-17T17:47:07.224327" level="INFO">Opening browser 'chrome' to base url 'https://stagingcorporate.tripjack.com/'.</msg>
+<arg>${staging_url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-01-17T17:47:07.224327" elapsed="3.156931"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-01-17T17:47:10.382258" elapsed="0.033381"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>${window_height}</arg>
+<arg>${window_width}</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2025-01-17T17:47:10.415639" elapsed="0.370653"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${email_field}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-01-17T17:47:10.786292" elapsed="0.466200"/>
+</kw>
+<status status="PASS" start="2025-01-17T17:47:07.224327" elapsed="4.028165"/>
+</kw>
+<kw name="Fetch Testdata By Id" owner="process_testdata_keyword">
+<msg time="2025-01-17T17:47:11.252492" level="INFO">${search_data} = {'TC_ID': 'TCH_02', 'Username': 'elon.musk5@mailinator.com', 'Otp': 123456, 'HotelCity': 'Navi mumbai', 'NoOfRoom': 1, 'NoOfAdults': 1, 'NumberOfMonthsAhead': 3, 'DepartureDate': 25, 'NumberOfMonthsAh...</msg>
+<var>${search_data}</var>
+<arg>${SEARCH_FLIGHTS_TD}</arg>
+<arg>Sheet1</arg>
+<arg>TCH_02</arg>
+<status status="PASS" start="2025-01-17T17:47:11.252492" elapsed="0.000000"/>
+</kw>
+<kw name="Login With Valid Corporate Traveller Username And OTP" owner="login_keywords">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-01-17T17:47:11.252492" level="INFO">${my_dict} = {'TC_ID': 'TCH_02', 'Username': 'elon.musk5@mailinator.com', 'Otp': 123456, 'HotelCity': 'Navi mumbai', 'NoOfRoom': 1, 'NoOfAdults': 1, 'NumberOfMonthsAhead': 3, 'DepartureDate': 25, 'NumberOfMonthsAh...</msg>
+<var>${my_dict}</var>
+<arg>&amp;{search_data}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-01-17T17:47:11.252492" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-17T17:47:11.267583" level="INFO">Typing text 'elon.musk5@mailinator.com' into text field '//input[@placeholder='Enter your email ID here']'.</msg>
+<arg>${email_field}</arg>
+<arg>${my_dict.Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T17:47:11.252492" elapsed="0.181137"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-17T17:47:11.433629" level="INFO">Clicking element '//span[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth css-1fi99zc']'.</msg>
+<arg>${login_next_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T17:47:11.433629" elapsed="0.397249"/>
+</kw>
+<kw name="Input Static Otp In The Otp Field" owner="login_keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-17T17:47:11.831884" level="INFO">Typing text '123456' into text field '//input[@aria-label='Please enter OTP character 1']'.</msg>
+<arg>${otp_field}</arg>
+<arg>${search_data['Otp']}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T17:47:11.830878" elapsed="0.343914"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-17T17:47:12.174792" level="INFO">Clicking element '//span[contains(normalize-space(),'Verify')]'.</msg>
+<arg>${verify_otp_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T17:47:12.174792" elapsed="0.073958"/>
+</kw>
+<arg>${search_data}</arg>
+<status status="PASS" start="2025-01-17T17:47:11.830878" elapsed="0.417872"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${corporate_traveller_home_navigation_text}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-17T17:47:12.248750" elapsed="1.179334"/>
+</kw>
+<arg>${search_data}</arg>
+<status status="PASS" start="2025-01-17T17:47:11.252492" elapsed="2.175592"/>
+</kw>
+<kw name="Click On Hotels Tab Button" owner="hotel_search_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${hotels_option}</arg>
+<arg>timeout=30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-17T17:47:13.428084" elapsed="0.022485"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-17T17:47:13.450569" level="INFO">Clicking element '//button[contains(@class,"MuiButtonBase-root")]//div[normalize-space()="Hotels"]'.</msg>
+<arg>${hotels_option}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T17:47:13.450569" elapsed="0.242050"/>
+</kw>
+<status status="PASS" start="2025-01-17T17:47:13.428084" elapsed="0.264535"/>
+</kw>
+<kw name="Search The Destination Of Hotels" owner="hotel_search_keywords">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-01-17T17:47:13.692619" level="INFO">${my_dict} = {'TC_ID': 'TCH_02', 'Username': 'elon.musk5@mailinator.com', 'Otp': 123456, 'HotelCity': 'Navi mumbai', 'NoOfRoom': 1, 'NoOfAdults': 1, 'NumberOfMonthsAhead': 3, 'DepartureDate': 25, 'NumberOfMonthsAh...</msg>
+<var>${my_dict}</var>
+<arg>&amp;{search_data}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-01-17T17:47:13.692619" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${to_enter_destination_hotels_inputbox}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-17T17:47:13.692619" elapsed="0.032857"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-01-17T17:47:13.732935" level="INFO">${input_city} = //div[normalize-space()="Navi mumbai"]</msg>
+<var>${input_city}</var>
+<arg>${search_destination}</arg>
+<arg>city</arg>
+<arg>${my_dict.HotelCity}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-01-17T17:47:13.725476" elapsed="0.007459"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-17T17:47:13.734872" level="INFO">Typing text 'Navi mumbai' into text field '//input[@placeholder="Enter Destination"]'.</msg>
+<arg>${to_enter_destination_hotels_inputbox}</arg>
+<arg>${my_dict.HotelCity}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T17:47:13.732935" elapsed="0.142307"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${input_city}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-17T17:47:13.875242" elapsed="0.243689"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-17T17:47:14.118931" level="INFO">Clicking element '//div[normalize-space()="Navi mumbai"]'.</msg>
+<arg>${input_city}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T17:47:14.118931" elapsed="0.074468"/>
+</kw>
+<arg>${search_data}</arg>
+<status status="PASS" start="2025-01-17T17:47:13.692619" elapsed="0.500780"/>
+</kw>
+<kw name="Click On Hotels Search Button" owner="hotel_search_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${hotels_search_button}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-17T17:47:14.193399" elapsed="0.023716"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-17T17:47:14.217115" level="INFO">Clicking element '//div[contains(@class,"icon-search MuiBox-root")]'.</msg>
+<arg>${hotels_search_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T17:47:14.217115" elapsed="0.085211"/>
+</kw>
+<arg>10</arg>
+<arg>20</arg>
+<arg>Click Element</arg>
+<arg>${hotels_search_button}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-01-17T17:47:14.217115" elapsed="0.085211"/>
+</kw>
+<status status="PASS" start="2025-01-17T17:47:14.193399" elapsed="0.108927"/>
+</kw>
+<kw name="Verify Checkout Date Before Checkin Date" owner="hotel_search_keywords">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-01-17T17:47:14.302326" level="INFO">${my_dict} = {'TC_ID': 'TCH_02', 'Username': 'elon.musk5@mailinator.com', 'Otp': 123456, 'HotelCity': 'Navi mumbai', 'NoOfRoom': 1, 'NoOfAdults': 1, 'NumberOfMonthsAhead': 3, 'DepartureDate': 25, 'NumberOfMonthsAh...</msg>
+<var>${my_dict}</var>
+<arg>&amp;{search_data}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-01-17T17:47:14.302326" elapsed="0.000000"/>
+</kw>
+<kw name="Select Departure Date" owner="hotel_search_keywords">
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2025-01-17T17:47:14.304388" level="INFO">${day} = 25</msg>
+<var>${day}</var>
+<arg>${day}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2025-01-17T17:47:14.304388" elapsed="0.000000"/>
+</kw>
+<kw name="No Of Months Ahead" owner="process_testdata_keyword">
+<msg time="2025-01-17T17:47:14.305427" level="INFO">Current Date: 17-01-2025
+New Date after adding 3 months: 2025-04-17
+January
+old  7
+removed zero  17
+17   2025   April</msg>
+<msg time="2025-01-17T17:47:14.305427" level="INFO">${list_for_dates} = ['17', 'April', '2025']</msg>
+<var>${list_for_dates}</var>
+<arg>${no_of_months}</arg>
+<status status="PASS" start="2025-01-17T17:47:14.305427" elapsed="0.000000"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-01-17T17:47:14.305427" level="INFO">${month} = April</msg>
+<var>${month}</var>
+<arg>${list_for_dates}</arg>
+<arg>1</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-01-17T17:47:14.305427" elapsed="0.000000"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-01-17T17:47:14.305427" level="INFO">${year} = 2025</msg>
+<var>${year}</var>
+<arg>${list_for_dates}</arg>
+<arg>2</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-01-17T17:47:14.305427" elapsed="0.000000"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-01-17T17:47:14.306431" level="INFO">${replaced_with_year} = //div[@class='react-datepicker__current-month' and text()='replacemonth 2025']/../../div[@class='react-datepicker__month']/div/div[contains(@class,'react-datepicker__day') and @role='option' and   not...</msg>
+<var>${replaced_with_year}</var>
+<arg>${final_date_locator_to_replace}</arg>
+<arg>replaceyear</arg>
+<arg>${year}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-01-17T17:47:14.305427" elapsed="0.001004"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-01-17T17:47:14.306431" level="INFO">${replaced_with_year} = //div[@class='react-datepicker__current-month' and text()='April 2025']/../../div[@class='react-datepicker__month']/div/div[contains(@class,'react-datepicker__day') and @role='option' and   not(contai...</msg>
+<var>${replaced_with_year}</var>
+<arg>${replaced_with_year}</arg>
+<arg>replacemonth</arg>
+<arg>${month}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-01-17T17:47:14.306431" elapsed="0.000000"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-01-17T17:47:14.306431" level="INFO">${replaced_with_day} = //div[@class='react-datepicker__current-month' and text()='April 2025']/../../div[@class='react-datepicker__month']/div/div[contains(@class,'react-datepicker__day') and @role='option' and   not(contai...</msg>
+<var>${replaced_with_day}</var>
+<arg>${replaced_with_year}</arg>
+<arg>replaceday</arg>
+<arg>${day}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-01-17T17:47:14.306431" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${departure_date_field}</arg>
+<arg>timeout=30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-17T17:47:14.306431" elapsed="1.111591"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-17T17:47:15.418022" level="INFO">Clicking element '(//input[contains(@class,'customDatePicker')])[1]'.</msg>
+<arg>${departure_date_field}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T17:47:15.418022" elapsed="0.107902"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2025-01-17T17:47:15.527165" level="INFO">${no_of_months_departure} = 3.0</msg>
+<var>${no_of_months_departure}</var>
+<arg>${no_of_months}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2025-01-17T17:47:15.527165" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-01-17T17:47:15.527165" level="INFO">${no_of_months_departure} = 3.0</msg>
+<arg>${no_of_months_departure}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-01-17T17:47:15.527165" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-01-17T17:47:15.527165" level="INFO">1.0</msg>
+<arg>${counter}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-01-17T17:47:15.527165" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${next_month_button}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-17T17:47:15.527165" elapsed="0.024142"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${next_month_button}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-01-17T17:47:15.551307" elapsed="0.031936"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-17T17:47:15.597922" level="INFO">Clicking element '//button[@aria-label='Next Month']'.</msg>
+<arg>${next_month_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T17:47:15.583243" elapsed="0.090156"/>
+</kw>
+<var name="${counter}">1.0</var>
+<status status="PASS" start="2025-01-17T17:47:15.527165" elapsed="0.146234"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-01-17T17:47:15.673399" level="INFO">2.0</msg>
+<arg>${counter}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-01-17T17:47:15.673399" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${next_month_button}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-17T17:47:15.673399" elapsed="0.027014"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${next_month_button}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-01-17T17:47:15.700413" elapsed="0.031976"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-17T17:47:15.733057" level="INFO">Clicking element '//button[@aria-label='Next Month']'.</msg>
+<arg>${next_month_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T17:47:15.732389" elapsed="0.071786"/>
+</kw>
+<var name="${counter}">2.0</var>
+<status status="PASS" start="2025-01-17T17:47:15.673399" elapsed="0.130776"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-01-17T17:47:15.804175" level="INFO">3.0</msg>
+<arg>${counter}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-01-17T17:47:15.804175" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${next_month_button}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-17T17:47:15.804175" elapsed="0.012440"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${next_month_button}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-01-17T17:47:15.816615" elapsed="0.018087"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-17T17:47:15.840006" level="INFO">Clicking element '//button[@aria-label='Next Month']'.</msg>
+<arg>${next_month_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T17:47:15.834702" elapsed="0.077138"/>
+</kw>
+<var name="${counter}">3.0</var>
+<status status="PASS" start="2025-01-17T17:47:15.804175" elapsed="0.107665"/>
+</iter>
+<var>${counter}</var>
+<value>1</value>
+<value>${no_of_months_departure}+1</value>
+<status status="PASS" start="2025-01-17T17:47:15.527165" elapsed="0.384675"/>
+</for>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${replaced_with_day}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-17T17:47:15.911840" elapsed="0.019599"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-17T17:47:15.931945" level="INFO">Clicking element '//div[@class='react-datepicker__current-month' and text()='April 2025']/../../div[@class='react-datepicker__month']/div/div[contains(@class,'react-datepicker__day') and @role='option' and   not(contains(@class,'outside-month')) and  not(contains(@class,'disabled')) and text()='25']'.</msg>
+<arg>${replaced_with_day}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T17:47:15.931945" elapsed="0.094842"/>
+</kw>
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2025-01-17T17:47:16.034019" level="INFO">${selected_departure_date} = 25-Apr-25</msg>
+<var>${selected_departure_date}</var>
+<arg>${departure_date_selected_text}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T17:47:16.026787" elapsed="0.007232"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-01-17T17:47:16.034019" level="INFO">${selected_departure_date} = 25-Apr-25</msg>
+<arg>${selected_departure_date}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-01-17T17:47:16.034019" elapsed="0.000000"/>
+</kw>
+<arg>${my_dict.NumberOfMonthsAhead}</arg>
+<arg>${my_dict.DepartureDate}</arg>
+<status status="PASS" start="2025-01-17T17:47:14.303328" elapsed="1.730691"/>
+</kw>
+<kw name="Select Checkout Date Before Check In Date" owner="hotel_search_keywords">
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2025-01-17T17:47:16.034019" level="INFO">${day} = 11</msg>
+<var>${day}</var>
+<arg>${day}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2025-01-17T17:47:16.034019" elapsed="0.000000"/>
+</kw>
+<kw name="No Of Months Ahead" owner="process_testdata_keyword">
+<msg time="2025-01-17T17:47:16.034019" level="INFO">Current Date: 17-01-2025
+New Date after adding 3 months: 2025-03-17
+January
+old  7
+removed zero  17
+17   2025   March</msg>
+<msg time="2025-01-17T17:47:16.034019" level="INFO">${list_for_dates} = ['17', 'March', '2025']</msg>
+<var>${list_for_dates}</var>
+<arg>${no_of_months}</arg>
+<status status="PASS" start="2025-01-17T17:47:16.034019" elapsed="0.000000"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-01-17T17:47:16.048029" level="INFO">${month} = March</msg>
+<var>${month}</var>
+<arg>${list_for_dates}</arg>
+<arg>1</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-01-17T17:47:16.034019" elapsed="0.014010"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-01-17T17:47:16.049037" level="INFO">${year} = 2025</msg>
+<var>${year}</var>
+<arg>${list_for_dates}</arg>
+<arg>2</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-01-17T17:47:16.048029" elapsed="0.001008"/>
+</kw>
+<kw name="Split String" owner="String">
+<msg time="2025-01-17T17:47:16.049037" level="INFO">${departure_Date_value} = ['25', 'Apr', '25']</msg>
+<var>${departure_Date_value}</var>
+<arg>${selected_departure_date}</arg>
+<arg>-</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2025-01-17T17:47:16.049037" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-01-17T17:47:16.049880" level="INFO">${checkout_date} = 24</msg>
+<var>${checkout_date}</var>
+<arg>${departure_Date_value}[0]-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-01-17T17:47:16.049880" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2025-01-17T17:47:16.050428" level="INFO">${checkout_date_value} = 24</msg>
+<var>${checkout_date_value}</var>
+<arg>${checkout_date}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2025-01-17T17:47:16.050428" elapsed="0.000000"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-01-17T17:47:16.050672" level="INFO">${replaced_with_year} = //div[@class='react-datepicker__current-month' and text()='replacemonth 2025']/../../div[@class='react-datepicker__month']/div/div[contains(@class,'react-datepicker__day') and @role='option' and @aria...</msg>
+<var>${replaced_with_year}</var>
+<arg>${disabled_check_out_date}</arg>
+<arg>replaceyear</arg>
+<arg>${year}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-01-17T17:47:16.050672" elapsed="0.000000"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-01-17T17:47:16.050672" level="INFO">${replaced_with_year} = //div[@class='react-datepicker__current-month' and text()='March 2025']/../../div[@class='react-datepicker__month']/div/div[contains(@class,'react-datepicker__day') and @role='option' and @aria-disabl...</msg>
+<var>${replaced_with_year}</var>
+<arg>${replaced_with_year}</arg>
+<arg>replacemonth</arg>
+<arg>${month}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-01-17T17:47:16.050672" elapsed="0.000000"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-01-17T17:47:16.050672" level="INFO">${replaced_with_day} = //div[@class='react-datepicker__current-month' and text()='March 2025']/../../div[@class='react-datepicker__month']/div/div[contains(@class,'react-datepicker__day') and @role='option' and @aria-disabl...</msg>
+<var>${replaced_with_day}</var>
+<arg>${replaced_with_year}</arg>
+<arg>replaceday</arg>
+<arg>${checkout_date_value}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-01-17T17:47:16.050672" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-17T17:47:16.050672" level="INFO">Clicking element '(//input[contains(@class,'customDatePicker')])[2]'.</msg>
+<arg>${return_date_field}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T17:47:16.050672" elapsed="0.084955"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${hotel_page_search_button}</arg>
+<arg>timeout=30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-17T17:47:16.135627" elapsed="0.015462"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-17T17:47:16.151089" level="INFO">Clicking element '//button[contains(text(),"Search")]'.</msg>
+<arg>${hotel_page_search_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T17:47:16.151089" elapsed="0.106066"/>
+</kw>
+<arg>${my_dict.NumberOfMonthsAheadForReturn}</arg>
+<arg>${my_dict.ReturnDate}</arg>
+<status status="PASS" start="2025-01-17T17:47:16.034019" elapsed="0.223136"/>
+</kw>
+<arg>${search_data}</arg>
+<status status="PASS" start="2025-01-17T17:47:14.302326" elapsed="1.954829"/>
+</kw>
+<kw name="Total Nights Automatically Recalculated Based On Updated Check-In And Check-Out Dates" owner="hotel_search_keywords">
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2025-01-17T17:47:16.284797" level="INFO">${value} = 1</msg>
+<var>${value}</var>
+<arg>${hotel_result_total_night_calculate}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T17:47:16.257155" elapsed="0.027642"/>
+</kw>
+<status status="PASS" start="2025-01-17T17:47:16.257155" elapsed="0.027642"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-01-17T17:47:16.284797" elapsed="2.227852"/>
+</kw>
+<tag>TCH_02</tag>
+<status status="PASS" start="2025-01-17T17:47:07.224327" elapsed="11.288322"/>
+</test>
+<status status="PASS" start="2025-01-17T17:46:44.306007" elapsed="34.206642"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">TCH_01</stat>
+<stat pass="1" fail="0" skip="0">TCH_02</stat>
+</tag>
+<suite>
+<stat name="Hotel Testcases" id="s1" pass="2" fail="0" skip="0">Hotel Testcases</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-01-17T17:46:44.840981" level="ERROR">Error in file 'C:\Users\Amol\Desktop\Halo_Assignment\Resources\login_keywords.resource' on line 6: Library '..\..\CustomKeywords\process_testdata_keywords.py' does not exist.</msg>
+<msg time="2025-01-17T17:46:44.840981" level="ERROR">Error in file 'C:\Users\Amol\Desktop\Halo_Assignment\Resources\login_keywords.resource' on line 7: Variable file '..\..\..\..\..\Environment\environments.py' does not exist.</msg>
+<msg time="2025-01-17T17:46:44.840981" level="ERROR">Error in file 'C:\Users\Amol\Desktop\Halo_Assignment\Resources\login_keywords.resource' on line 8: Variable file '..\..\..\PageObjects\Login\login_locators.py' does not exist.</msg>
+<msg time="2025-01-17T17:46:44.840981" level="ERROR">Error in file 'C:\Users\Amol\Desktop\Halo_Assignment\Resources\login_keywords.resource' on line 9: Variable file '..\..\..\PageObjects\SearchFlights\search_flights_locators.py' does not exist.</msg>
+</errors>
+</robot>

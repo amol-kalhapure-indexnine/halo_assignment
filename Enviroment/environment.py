@@ -1,0 +1,11 @@
+tripjack_url = "https://qacorporate.technogramsolutions.com/"
+staging_url = "https://stagingcorporate.tripjack.com/"
+browser = "chrome"
+window_height = 1920
+window_width = 1080
+# downloads_path="GIVE_PATH_OF_DOWNLOADS_DIRECTORY"
+# environment ="QA"
+# environment="Prod"
+environment = "QA"
+# receiver_email = [ "govind.m@indexnine.com", "suraj.warade@indexnine.com"]
+receiver_email = ["tejaswini.ekkalddevi@indexnine.com", "gorakh.sawant@indexnine.com"]

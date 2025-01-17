@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3a7e9919-0fea-46a6-aa78-3779831165a4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/Halo_Assignment.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Enviroment/environment.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PageObjects/hotel_search_locators.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PageObjects/login_locators.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resources/hotel_search_keywords.resource" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resources/login_keywords.resource" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resources/process_testdata_keyword.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test Data/hotel_search_test_data.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestCases/hotel_testcases.robot" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2rkgsEi6KK2Vo9JdjUb1uhCrMrr" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Robot.TCH_01 Verify traveler can refine search results by inputting values in Min Price and Max Price text boxes.executor": "Run",
+    "Robot.TCH_02 Verify total nights automatically recalculated based on updated check-in and check-out dates.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Amol\Desktop\Halo_Assignment\Test Data" />
+      <recent name="C:\Users\Amol\Desktop\Halo_Assignment\Resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Robot.TCH_02 Verify total nights automatically recalculated based on updated check-in and check-out dates">
+    <configuration name="TCH_01 Verify traveler can refine search results by inputting values in Min Price and Max Price text boxes" type="RobotRunConfiguration" factoryName="RobotRunConfiguration" temporary="true">
+      <module name="Halo_Assignment" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/AppData/Local/Programs/Python/Python312/python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="robot.run" />
+      <option name="PARAMETERS" value="--test &quot;Halo_Assignment.TestCases.hotel_testcases.TCH_01 Verify traveler can refine search results by inputting values in Min Price and Max Price text boxes&quot; ." />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="true" />
+      <option name="MODULE_MODE" value="true" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TCH_02 Verify total nights automatically recalculated based on updated check-in and check-out dates" type="RobotRunConfiguration" factoryName="RobotRunConfiguration" temporary="true">
+      <module name="Halo_Assignment" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/AppData/Local/Programs/Python/Python312/python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="robot.run" />
+      <option name="PARAMETERS" value="--test &quot;Halo_Assignment.TestCases.hotel_testcases.TCH_02 Verify total nights automatically recalculated based on updated check-in and check-out dates&quot; ." />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="true" />
+      <option name="MODULE_MODE" value="true" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Robot.TCH_02 Verify total nights automatically recalculated based on updated check-in and check-out dates" />
+        <item itemvalue="Robot.TCH_01 Verify traveler can refine search results by inputting values in Min Price and Max Price text boxes" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-495700d161d3-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.22562.220" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3a7e9919-0fea-46a6-aa78-3779831165a4" name="Changes" comment="" />
+      <created>1737108691457</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1737108691457</updated>
+    </task>
+    <servers />
+  </component>
+</project>
