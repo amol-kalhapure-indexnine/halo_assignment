@@ -33,8 +33,6 @@ Running Tests :
 Sequential Execution Using Robot  
 
 Run the tests sequentially with the following commands:  
-   robot --outputdir Output/TestCases/Login/  
-   or  
    robot --outputdir Output/TestCases/  
 
 ---
